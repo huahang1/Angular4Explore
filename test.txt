@@ -1,1 +1,3 @@
 test for configure username
+
+switch username
