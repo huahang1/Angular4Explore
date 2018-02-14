@@ -1,8 +1,6 @@
-//like a standard tag library, always import before using
 import { Component, OnInit } from '@angular/core';
-
-//import hero class from outside
 import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -11,15 +9,18 @@ import { Hero } from '../hero';
 })
 export class HeroesComponent implements OnInit {
 
-  //instantiated the class into instance and uses it
-  hero : Hero={
-    id:1,
-    name:'Windstorm'
-  };
+  heroes = HEROES;
+
+  selectedHero: Hero;
+  
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  
 }
